@@ -17,6 +17,7 @@ import numpy as np
 from kite.scene import Scene, SceneConfig
 
 from timeit import default_timer as timer
+from bbd2kite2024 import tl5_layer
 
 
 
@@ -262,7 +263,7 @@ start = timer()
 
 tl5_file  = '/media/hog/docCrucial1T/tools/nextcloud/kandidat/Roenne_overview/aoi_msc_gpk/tl5_l2b_aoi_msc_gpkg.gpkg'
 tl5_file  = '/home/hog/data/mscthesis/aoi_msc_gpk/tl5_l2b_aoi_msc_gpkg.gpkg'
-tl5_layer = 'tl5_a_044_01_mscaoi_sent1ABmv'
+tl5_layer = 'tl5_d_139_01_mscaoi_sent1ABmv'
 
 
 scene = bbd2kite(
@@ -275,4 +276,6 @@ scene = bbd2kite(
 
 end = timer()
 # print('Time to prepare "spool" [s]', end - start)
+out_file = '/home/hog/Downloads/'+tl5_layer
+scene.save(out_file)
 scene.spool()
